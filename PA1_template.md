@@ -1,14 +1,23 @@
 # Reproducible Research: Peer Assessment 1
 
 
-## Loading and preprocessing the data
+## Loading the data
 
 
-1.Load the data
-
+The data is stored in a csv file called "activity.csv". This file is saved in a zip file named: "repdata_data_activity.zip". The below code downloads & unzips this file and then reads the data from the csv file. 
 
 ```r
-unzip ("activity.zip")
+#Download the data
+url <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+
+file_name <- "activity.zip"
+
+download.file(url, file_name)
+
+# Unzip file
+unzip (file_name)
+
+#read data from the CSV file into data frame
 activity <- read.csv("activity.csv", header = TRUE)
 ```
 
